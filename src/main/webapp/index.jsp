@@ -381,9 +381,7 @@
 		window.location.href="login.jsp";
 	});
 	$("#registerBtn").click(function(){
-		$('#user_register_modal').modal({
-			backdrop:'static'
-		})
+		window.location.href="regsiter.jsp";
 	});
 	</script>
 </body>

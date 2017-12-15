@@ -75,7 +75,11 @@
 				data : $("#loginForm").serialize(),
 				success : function(result) {
 					if (result.code == 100) {
-						window.location.href="http://www.webglaxy.com";
+						if($("#userName").val()=="admin"){
+							window.location.href="admin.jsp";
+						}else{
+							window.location.href="http://www.webglaxy.com";
+						}
 					} else {
 						layer.msg('用户名或密码不正确，请重新输入', {icon: 5});
 					}

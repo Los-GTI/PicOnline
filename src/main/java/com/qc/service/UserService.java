@@ -3,16 +3,21 @@
  */
 package com.qc.service;
 
+import java.util.List;
+
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.qc.bean.User;
 import com.qc.bean.UserExample;
 import com.qc.bean.UserExample.Criteria;
 import com.qc.dao.UserMapper;
 
 /**
  * @author qinc
- * @date 2017Äê12ÔÂ7ÈÕ ÉÏÎç11:33:35
+ * @date 2017ï¿½ï¿½12ï¿½ï¿½7ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½11:33:35
  */
 @Service
 public class UserService {
@@ -23,7 +28,7 @@ public class UserService {
 	/**
 	 * @param username
 	 * @param password
-	 * ·µ»Øtrue±íÊ¾ÓÃ»§ÃûÃÜÂëÕıÈ·
+	 * ï¿½ï¿½ï¿½ï¿½trueï¿½ï¿½Ê¾ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È·
 	 */
 	public boolean checkUser(String username, String password) {
 		// TODO Auto-generated method stub
@@ -33,5 +38,34 @@ public class UserService {
 		criteria.andPasswordEqualTo(password);
 		long count=userMapper.countByExample(example);
 		return count==1;
+	}
+
+	public void userRegister(User user) {
+		// TODO Auto-generated method stub
+		userMapper.insert(user);
+	}
+
+	public List<User> getAll() {
+		// TODO Auto-generated method stub
+		return userMapper.selectByExample(null);
+	}
+	
+	/*
+	 * æ£€éªŒç”¨æˆ·åæ˜¯å¦å¯ç”¨
+	 * @param userName
+	 * @return true:ä»£è¡¨å¯ç”¨s
+	 * */
+	public boolean checkuser(String userName) {
+		// TODO Auto-generated method stub
+		UserExample example=new UserExample();
+		Criteria criteria=example.createCriteria();
+		criteria.andUsernameEqualTo(userName);
+		long count=userMapper.countByExample(example);
+		return count==0;
+	}
+
+	public void userSave(@Valid User user) {
+		// TODO Auto-generated method stub
+		userMapper.insertSelective(user);
 	}
 }

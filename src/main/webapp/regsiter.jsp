@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-<title>Login</title>
+<title>Register</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="keywords"
 	content="Flat Dark Web Login Form Responsive Templates, Iphone Widget Template, Smartphone login forms,Login form, Widget Template, Responsive Templates, a Ipad 404 Templates, Flat Responsive Templates" />
@@ -42,7 +42,7 @@
 		<div class="avtar">
 			<img src="${PIC_PATH }/static/assets/images/avtar.png" />
 		</div>
-		<form id="loginForm">
+		<form id="registerForm">
 			<input type="text" class="text" value="username" name="username"
 				id="userName" onfocus="this.value = '';"
 				onblur="if (this.value == '') {this.value = 'Username';}"> 
@@ -60,6 +60,18 @@
 		<p>Copyright &copy; 2017.WHU CS All rights reserved.</p>
 	</div>
 	<script type="text/javascript">
+	$("#submitBtn").click(function(){
+		$.ajax({
+			url:"${PIC_PATH}/register",
+			type:"POST",
+			data:$("#registerForm").serialize(),
+			success:function(result){
+				//console.log(result);
+				layer.msg('注册成功即将跳转到登录页面，请稍后。。。', {icon: 5});
+				window.location.href="login.jsp";
+			}
+		});
+	});
 	</script>
 </body>
 </html>
