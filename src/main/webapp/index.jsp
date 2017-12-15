@@ -44,7 +44,7 @@
 
 <body>
 <!-- 用户登录的模态框 -->
-	<div class="modal fade" id="user_login_modal" tabindex="-1" role="dialog"
+	<div class="modal fade" id="user_register_modal" tabindex="-1" role="dialog"
 		aria-labelledby="myModalLabel">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
@@ -113,7 +113,7 @@
 				<li><a href="">联系我们</a></li>
 				<li><a href="login.jsp" class="btn btn-primary btn-lg active" role="button" id="">登录</a></li>
 				<li><a></a></li>
-				<li><a href="regsiter.jsp" class="btn btn-primary btn-lg active" role="button">注册</a></li>
+				<li><a id="registerBtn" href="" class="btn btn-primary btn-lg active" role="button">注册</a></li>
 				<!-- <li><a href="contact.html">登录</a></li>
 				<li><a href="contact.html">注册</a></li> -->
 			</ul>
@@ -419,8 +419,11 @@
 	<!-- // <script src="assets/js/smoothscroll.js"></script> -->
 	<script src="${PIC_PATH }/static/assets/js/script.js"></script>
 	<script>
-		$(function() {
-		});
+		/* document.getElementById("registerBtn").click(function(){
+			$('#user_register_modal').modal({
+				backdrop:'static'
+			})
+		}); */
 	</script>
 </body>
 </html>
