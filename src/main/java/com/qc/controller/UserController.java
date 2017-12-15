@@ -93,8 +93,8 @@ public class UserController {
 	/*
 	 * 检查用户名是否可用
 	 * */
+	@RequestMapping(value="/checkUser" ,method=RequestMethod.POST)
 	@ResponseBody
-	@RequestMapping("/checkUser")
 	public Msg checkuser(@RequestParam("userName") String userName) {
 		//先判断用户名是不是合法的表达式
 		String regx="(^[a-zA-Z0-9_-]{6,16}$)|(^[\u2E80-\u9FFF]{2,5})";
