@@ -41,49 +41,7 @@
 		    	<script src="assets/js/selectivizr.js"></script>
 		    <![endif]-->
 </head>
-
 <body>
-<!-- 用户登录的模态框 -->
-	<div class="modal fade" id="user_register_modal" tabindex="-1" role="dialog"
-		aria-labelledby="myModalLabel">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal"
-						aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-					<h4 class="modal-title" id="myModalLabel">用户登录</h4>
-				</div>
-				<div class="modal-body">
-					<form class="form-horizontal">
-						<div class="form-group">
-							<label for="empName" class="col-sm-2 control-label">用户名:</label>
-							<div class="col-sm-10">
-								<input type="text" class="form-control" id="empNameInput"
-									name="userName" placeholder="userName">
-								<span
-									id="helpBlock1" class="help-block"></span>
-							</div>
-						</div>
-						<div class="form-group">
-							<label for="emailInput" class="col-sm-2 control-label">密码：</label>
-							<div class="col-sm-10">
-								<input type="password" class="form-control" id="emailInput"
-									name="password" placeholder="password">
-								<span
-										id="helpBlock2" class="help-block"></span>
-							</div>
-						</div>
-					</form>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-					<button type="button" class="btn btn-primary" id="empSave">提交</button>
-				</div>
-			</div>
-		</div>
-	</div>
 	<!-- Home -->
 	<section class="header" id="header"> 
 	<nav class="navbar navbar-default">
@@ -111,9 +69,9 @@
 				<li><a href="">提供的服务</a></li>
 				<li><a href="">作品展示</a></li>
 				<li><a href="">联系我们</a></li>
-				<li><a href="login.jsp" class="btn btn-primary btn-lg active" role="button" id="">登录</a></li>
+				<li><button type="button" class="btn btn-primary" id="loginBtn">登录</button></li>
 				<li><a></a></li>
-				<li><a id="registerBtn" href="" class="btn btn-primary btn-lg active" role="button">注册</a></li>
+				<li><button type="button" class="btn btn-primary" id="registerBtn">注册</button></li>
 				<!-- <li><a href="contact.html">登录</a></li>
 				<li><a href="contact.html">注册</a></li> -->
 			</ul>
@@ -419,11 +377,14 @@
 	<!-- // <script src="assets/js/smoothscroll.js"></script> -->
 	<script src="${PIC_PATH }/static/assets/js/script.js"></script>
 	<script>
-		/* document.getElementById("registerBtn").click(function(){
-			$('#user_register_modal').modal({
-				backdrop:'static'
-			})
-		}); */
+	$("#loginBtn").click(function(){
+		window.location.href="login.jsp";
+	});
+	$("#registerBtn").click(function(){
+		$('#user_register_modal').modal({
+			backdrop:'static'
+		})
+	});
 	</script>
 </body>
 </html>
