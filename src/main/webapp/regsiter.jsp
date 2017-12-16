@@ -44,7 +44,7 @@
 		</div>
 		<form id="registerForm">
 			<input type="text" class="text" value="username" name="username"
-				id="userName" onfocus="this.value = '';"
+				id="username" onfocus="this.value = '';"
 				onblur="if (this.value == '') {this.value = 'Username';}"> 
 			<input type="text" class="" value="email" name="email" id="email"
 				onfocus="this.value = '';"
@@ -71,6 +71,37 @@
 				window.location.href="login.jsp";
 			}
 		});
+	});
+	//表单校验用户名
+	$("#username").change(function(){
+		var username=$("#username").val();
+		var validateUserName = /(^[a-zA-Z0-9_-]{5,16}$)|(^[\u2E80-\u9FFF]{2,5})/;
+		if(!validateUserName.test(username)){
+			layer.msg('用户名不合法，用户名可以是2-5中文或者5-16位英文数字组合', {icon: 5});
+		}else{
+			$.ajax({
+				url:"${PIC_PATH}/checkUser",
+				type:"POST",
+				data:"userName="+username,
+				success:function(result){
+					if(result.code==100){
+						layer.msg('用户名可用',{icon:5});
+					}else{
+						layer.msg('用户名已存在，请重新输入', {icon: 5});
+					}
+				}
+			});
+		}
+	});
+	//表单校验邮箱
+	$("#email").change(function(){
+		var email=$("#email").val();
+		var validateEmail=/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
+		if(!validateEmail.test(email)){
+			layer.msg('邮箱格式不正确请重新输入', {icon: 5});
+		}else{
+			layer.msg('邮箱可用', {icon: 5});
+		}
 	});
 	</script>
 </body>

@@ -106,7 +106,7 @@ public class UserController {
 		if (bool) {
 			return Msg.success();
 		} else {
-			return Msg.fail().add("va_msg", "用户名不可用");
+			return Msg.fail().add("va_msg", "用户名已存在请重新输入");
 		}
 	}
 }

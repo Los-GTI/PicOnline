@@ -276,7 +276,6 @@
 							}
 							//1.判断之前的ajax用户名校验是否成功
 							if ($("#userNameInput").attr("ajax-valite") == "fail") {
-								s
 								return false;
 							}
 							$
@@ -323,15 +322,11 @@
 								data : "userName=" + userName,
 								success : function(result) {
 									if (result.code == 100) {
-										validate_msg("#userNameInput",
-												"success", "用户名可用");
-										$("#userNameInput").attr("ajax-valite",
-												"success");
+										validate_msg("#userNameInput","success", "用户名可用");
+										$("#userNameInput").attr("ajax-valite","success");
 									} else {
-										validate_msg("#userNameInput", "fail",
-												result.extend.va_msg);
-										$("#userNameInput").attr("ajax-valite",
-												"fail");
+										validate_msg("#userNameInput", "fail",result.extend.va_msg);
+										$("#userNameInput").attr("ajax-valite","fail");
 									}
 								}
 							});
