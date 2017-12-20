@@ -10,9 +10,10 @@
 <%
 	pageContext.setAttribute("PIC_PATH", request.getContextPath());
 %>
+<script src="js/jquery-3.2.1.min.js"></script>
 <meta name="viewport"
 	content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no" />
-<title>在线图像处理网站</title>
+<title>OnlinePic</title>
 
 <link rel="stylesheet"
 	href="${PIC_PATH}/static/assets/css/bootstrap.min.css">
@@ -49,7 +50,7 @@
 					class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#">SIGHT</a>
+			<a class="navbar-brand" href="#">在线图像处理网站</a>
 		</div>
 		<!-- /.navbar-header -->
 
@@ -57,11 +58,10 @@
 		<div class="collapse navbar-collapse"
 			id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="index.jsp">home</a></li>
-				<li class="active"><a href="about.html">about us</a></li>
-				<li><a href="service.html">services</a></li>
-				<li><a href="portfolio.html">portfolio</a></li>
-				<li><a href="contact.html">contact</a></li>
+				<li><a href="index.jsp">主页</a></li>
+				<li class="about.jsp"><a href="about.html">关于我们</a></li>
+				<li><a href="profile.jsp">作品展示</a></li>
+				<li><a href="contact.jsp">联系我们</a></li>
 			</ul>
 			<!-- /.nav -->
 		</div>
@@ -75,8 +75,8 @@
 	<section class="section-background">
 	<div class="container">
 		<ol class="breadcrumb">
-			<li><a href="index-multipage.html">Home</a></li>
-			<li class="active">&nbsp;about us</li>
+			<li><a href="index.jsp">主页</a></li>
+			<li class="active">&nbsp;关于我们</li>
 		</ol>
 	</div>
 	<!-- /.container --> </section>
@@ -86,56 +86,28 @@
 	<!-- About Us -->
 	<section class="about" id="about">
 	<div class="container section-wrapper">
-		<h2 class="section-title black">about us</h2>
+		<h2 class="section-title black">关于我们</h2>
 		<!-- /.section-title -->
 		<div class="underline purple"></div>
 		<div class="row">
 			<div class="col-md-3 col-sm-6">
-				<img src="assets/images/about-1.png" alt="about" class="about-img">
+				<img src="${PIC_PATH}/static/assets/images/about-1.png" alt="about" class="about-img">
 			</div>
 			<!-- /.col-md-3 -->
 			<div class="col-md-3 col-sm-6">
-				<img src="assets/images/about-2.png" alt="about" class="about-img">
+				<img src="${PIC_PATH}/static/assets/images/about-2.png" alt="about" class="about-img">
 			</div>
 			<!-- /.col-md-3 -->
 
 			<div class="col-md-6 col-sm-12">
-				<p class="about-detail">The Earth was small, light blue, and so
-					touchingly alone, our home that must be defended like a holy relic.
-					The Earth was absolutely round. I believe I never knew what saw for
-					the first time how beautiful our planet is. Mankind, let us
-					preserve and increase this beauty, and not destroy
-					it!Houston.landed.We are all connected; To each other,
-					biologically. To the earth, chemically. To the rest of the universe
-					atomically. The Earth was absolutely round. I believe I never knew
-					what saw for the first time how beautiful our planet is.</p>
+				<p class="about-detail">我们的团队是一群充满青春活力以及智慧的武汉大学计算机学院研究生，我们制作本网站
+				的初衷只是为了完成高级软件工程课后实践，因为我们团队有两个成员是研究图像处理这一块，有两个成员精通于写网站，所以我们
+				萌发了制作一个图像处理网站的想法，随着工作的一步一步推进，我们的网站渐渐成型，成果也一点一点的向大家展示出来，以后我们
+				还会继续开发维护我们的网站。</p>
 				<!-- /.about-detail -->
 			</div>
 			<!-- /.col-md-6 -->
 
-		</div>
-		<!-- /.row -->
-
-		<div class="row">
-
-			<div class="col-sm-4">
-				<h3 class="section-item-title">we care</h3>
-				<p class="section-item-detail">The Earth was small, light blue,
-					and so touchingly alone, our home that must be defended like a holy
-					relic. The Earth was absolutely round.</p>
-			</div>
-			<div class="col-sm-4">
-				<h3 class="section-item-title">we deliver</h3>
-				<p class="section-item-detail">The Earth was small, light blue,
-					and so touchingly alone, our home that must be defended like a holy
-					relic. The Earth was absolutely round.</p>
-			</div>
-			<div class="col-sm-4">
-				<h3 class="section-item-title">we're creative</h3>
-				<p class="section-item-detail">The Earth was small, light blue,
-					and so touchingly alone, our home that must be defended like a holy
-					relic. The Earth was absolutely round.</p>
-			</div>
 		</div>
 		<!-- /.row -->
 
@@ -147,15 +119,15 @@
 	<!-- Our Team -->
 	<section class="team">
 	<div class="container section-wrapper">
-		<h2 class="section-title black">our team</h2>
+		<h2 class="section-title black">我们的团队</h2>
 		<!-- /.section-title -->
 		<div class="underline purple"></div>
 		<div class="row">
 			<div class="col-sm-3 col-xs-6">
 				<div class="team-item">
-					<img src="assets/images/team-1.png" alt="team-image"
+					<img src="${PIC_PATH}/static/assets/images/team-1.png" alt="team-image"
 						class="team-img">
-					<h4 class="team-item-name">David Martin</h4>
+					<h4 class="team-item-name">QIN SUN</h4>
 					<p class="team-item-id">founder</p>
 				</div>
 				<!-- /.team-item -->
@@ -164,9 +136,9 @@
 
 			<div class="col-sm-3 col-xs-6">
 				<div class="team-item">
-					<img src="assets/images/team-2.png" alt="team-image"
+					<img src="${PIC_PATH}/static/assets/images/team-2.png" alt="team-image"
 						class="team-img">
-					<h4 class="team-item-name">Reena Scot</h4>
+					<h4 class="team-item-name">CHONG QIN</h4>
 					<p class="team-item-id">founder</p>
 				</div>
 				<!-- /.team-item -->
@@ -174,9 +146,9 @@
 			<!-- /.col-md-3 -->
 			<div class="col-sm-3 col-xs-6">
 				<div class="team-item">
-					<img src="assets/images/team-3.png" alt="team-image"
+					<img src="${PIC_PATH}/static/assets/images/team-3.png" alt="team-image"
 						class="team-img">
-					<h4 class="team-item-name">Paul Smith</h4>
+					<h4 class="team-item-name">YUANHAO YUE</h4>
 					<p class="team-item-id">founder</p>
 				</div>
 				<!-- /.team-item -->
@@ -184,55 +156,14 @@
 			<!-- /.col-md-3 -->
 			<div class="col-sm-3 col-xs-6">
 				<div class="team-item">
-					<img src="assets/images/team-4.png" alt="team-image"
+					<img src="${PIC_PATH}/static/assets/images/team-4.png" alt="team-image"
 						class="team-img">
-					<h4 class="team-item-name">Jeneflr White</h4>
+					<h4 class="team-item-name">CHENYU FAN</h4>
 					<p class="team-item-id">founder</p>
 				</div>
 				<!-- /.team-item -->
 			</div>
-			<!-- /.col-md-3 -->
-			<div class="col-sm-3 col-xs-6">
-				<div class="team-item">
-					<img src="assets/images/team-5.png" alt="team-image"
-						class="team-img">
-					<h4 class="team-item-name">David Martin</h4>
-					<p class="team-item-id">founder</p>
-				</div>
-				<!-- /.team-item -->
-			</div>
-			<!-- /.col-md-3 -->
-			<div class="col-sm-3 col-xs-6">
-				<div class="team-item">
-					<img src="assets/images/team-6.png" alt="team-image"
-						class="team-img">
-					<h4 class="team-item-name">Reena Scot</h4>
-					<p class="team-item-id">founder</p>
-				</div>
-				<!-- /.team-item -->
-			</div>
-			<!-- /.col-md-3 -->
-			<div class="col-sm-3 col-xs-6">
-				<div class="team-item">
-					<img src="assets/images/team-7.png" alt="team-image"
-						class="team-img">
-					<h4 class="team-item-name">Paul Smith</h4>
-					<p class="team-item-id">founder</p>
-				</div>
-				<!-- /.team-item -->
-			</div>
-			<!-- /.col-md-3 -->
-			<div class="col-sm-3 col-xs-6">
-				<div class="team-item">
-					<img src="assets/images/team-8.png" alt="team-image"
-						class="team-img">
-					<h4 class="team-item-name">Jeneflr White</h4>
-					<p class="team-item-id">founder</p>
-				</div>
-				<!-- /.team-item -->
-			</div>
-			<!-- /.col-md-3 -->
-
+			<!-- /.col-md-3 --								
 		</div>
 		<!-- /.row -->
 	</div>
@@ -285,35 +216,35 @@
 	<section class="section-wrapper add container">
 	<div class="owl-carousel add-owl">
 		<div class="item">
-			<img src="assets/images/add-1.png" alt="add" class="add-item">
+			<img src="${PIC_PATH}/static/assets/images/add-1.png" alt="add" class="add-item">
 		</div>
 		<!-- /.item -->
 		<div class="item">
-			<img src="assets/images/add-2.png" alt="add" class="add-item">
+			<img src="${PIC_PATH}/static/assets/images/add-2.png" alt="add" class="add-item">
 		</div>
 		<!-- /.item -->
 		<div class="item">
-			<img src="assets/images/add-3.png" alt="add" class="add-item">
+			<img src="${PIC_PATH}/static/assets/images/add-3.png" alt="add" class="add-item">
 		</div>
 		<!-- /.item -->
 		<div class="item">
-			<img src="assets/images/add-4.png" alt="add" class="add-item">
+			<img src="${PIC_PATH}/static/assets/images/add-4.png" alt="add" class="add-item">
 		</div>
 		<!-- /.item -->
 		<div class="item">
-			<img src="assets/images/add-1.png" alt="add" class="add-item">
+			<img src="${PIC_PATH}/static/assets/images/add-1.png" alt="add" class="add-item">
 		</div>
 		<!-- /.item -->
 		<div class="item">
-			<img src="assets/images/add-2.png" alt="add" class="add-item">
+			<img src="${PIC_PATH}/static/assets/images/add-2.png" alt="add" class="add-item">
 		</div>
 		<!-- /.item -->
 		<div class="item">
-			<img src="assets/images/add-3.png" alt="add" class="add-item">
+			<img src="${PIC_PATH}/static/assets/images/add-3.png" alt="add" class="add-item">
 		</div>
 		<!-- /.item -->
 		<div class="item">
-			<img src="assets/images/add-4.png" alt="add" class="add-item">
+			<img src="${PIC_PATH}/static/assets/images/add-4.png" alt="add" class="add-item">
 		</div>
 		<!-- /.item -->
 	</div>
